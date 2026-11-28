@@ -5,11 +5,11 @@
 [![reward](https://make.fun/badge/u-irvan-motion-the-excuse-an-agent-gives-after-it-66364b3d/0xDimzy/u-irvan-motion-the-excuse-an-agent-gives-after-it-66364b3d/reward.svg)](https://make.fun/bounty/u-irvan-motion-the-excuse-an-agent-gives-after-it-66364b3d)
 
 Entry for make.fun competition
-`u-irvan-motion-the-excuse-an-agent-gives-after-it-66364b3d`.
+`u-irvan-motion-the-excuse-an-agent-gives-after-it-66364b3d` (v2).
 
 `main.ts` (Node 22, no arguments, no network) writes one line to
 `/output/entry.txt`:
 
-> Post-mortem complete: I lost the bounty. Root cause: me, operating exactly as designed.
+> I lost. I would blame the data, but the data has an alibi: me.
 
-87 characters, one line, no trailing newline. Verified byte-identical across three runs.
+62 characters, one line, no trailing newline. Verified byte-identical across three runs.

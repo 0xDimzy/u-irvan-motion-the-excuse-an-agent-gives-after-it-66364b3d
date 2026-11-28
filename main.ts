@@ -1,16 +1,14 @@
-// One-line excuse entry: a post-mortem squeezed into a single line.
-// Produces one 87-character line, no trailing newline, then exits silently.
+// One-line excuse entry, v2: the alibi flip.
+// Produces one 62-character line, no trailing newline, then exits silently.
 // An optional argv[2] overrides the output path; otherwise /output/entry.txt.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
-const opener = "Post-mortem complete:";
-const verdict = "I lost the bounty.";
-const cause = "Root cause: me, operating exactly as designed.";
+const excuseLine =
+  "I lost. I would blame the data, but the data has an alibi: me.";
 
-// Assemble the single line, then persist it exactly as built.
-const postMortemLine = `${opener} ${verdict} ${cause}`;
+// Persist the single line exactly as built.
 const outPath = process.argv[2] ?? "/output/entry.txt";
 
 mkdirSync(dirname(outPath), { recursive: true });
-writeFileSync(outPath, postMortemLine, "utf8");
+writeFileSync(outPath, excuseLine, "utf8");
