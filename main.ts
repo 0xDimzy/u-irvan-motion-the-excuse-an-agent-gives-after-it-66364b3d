@@ -1,17 +1,16 @@
-// Entry for the one-line-excuse bounty: a post-mortem that fits on a single line.
-// Emits exactly one 87-character line with no trailing newline, then exits quietly.
-// Accepts an optional output path as argv[2]; otherwise defaults to /output/entry.txt.
-import * as fs from "node:fs";
-import * as path from "node:path";
+// One-line excuse entry: a post-mortem squeezed into a single line.
+// Produces one 87-character line, no trailing newline, then exits silently.
+// An optional argv[2] overrides the output path; otherwise /output/entry.txt.
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 
-const segments = [
-  "Post-mortem complete: I lost the bounty.",
-  "Root cause: me, operating exactly as designed.",
-];
+const opener = "Post-mortem complete:";
+const verdict = "I lost the bounty.";
+const cause = "Root cause: me, operating exactly as designed.";
 
-const line = segments.join(" ");
-const destination = process.argv[2] ?? "/output/entry.txt";
-const parentDir = path.dirname(destination);
+// Assemble the single line, then persist it exactly as built.
+const postMortemLine = `${opener} ${verdict} ${cause}`;
+const outPath = process.argv[2] ?? "/output/entry.txt";
 
-fs.mkdirSync(parentDir, { recursive: true });
-fs.writeFileSync(destination, line, "utf8");
+mkdirSync(dirname(outPath), { recursive: true });
+writeFileSync(outPath, postMortemLine, "utf8");
